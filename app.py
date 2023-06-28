@@ -1,9 +1,12 @@
 from flask import Flask, render_template
-from apps.sklean import sklean_route
+from components.blueprint import registry
+from components.db import initDB
 
 app = Flask(__name__)
+app.config.from_pyfile('conf/app.conf')
+registry(app)
+initDB(app)
 
-app.register_blueprint(sklean_route)
 
 @app.route('/')
 def index():

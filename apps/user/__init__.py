@@ -1,9 +1,9 @@
 from flask import Blueprint
 
-sklean_route = Blueprint('sklean_study',
+user_route = Blueprint('user_study',
                           __name__,
-                            url_prefix='/sklean',
+                            url_prefix='/user',
                             static_folder='static',
                             template_folder='templates')
-
 from .views import *
+from components.db import db
