@@ -5,7 +5,7 @@ services:
     - infinity
     image: tears999/python:1.0
     init: true
-    command: apt install python3.11-venv && python3 -m venv venv && source venv/bin/activate && /bin/bash
+    command: /bin/bash
     volumes:
     - type: bind
       source: /var/run/docker.sock
