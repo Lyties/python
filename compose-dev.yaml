@@ -3,7 +3,7 @@ services:
     entrypoint:
     - sleep
     - infinity
-    image: python
+    image: tears999/python:1.0
     init: true
     volumes:
     - type: bind
