@@ -10,11 +10,16 @@ def users():
     user_list = []
     if users:
         for user in users:
-            user_list.append(str(user.__dict__))
+            dict = {
+                'name': user.name,
+                'age': user.age,
+                'id': user.id
+            }
+            user_list.append(dict)
 
-    return jsonify(errno=200, errmsg="OK", data={"users": user_list})
+    return jsonify(code=200, message="OK", data={"users": user_list})
 
-
+@app.route('save')
 def save():
     u = User(name='qin',age=26)
     db.session.add(u)
